@@ -10,7 +10,8 @@ def index(request):
 
     # Construct a dictionary to pass to the template engine as its context.
     # Note the key boldmessage is the same as {{ boldmessage }} in the template!
-    context_dict = {'boldmessage': "I am bold font from the context"}
+    context_dict = {'boldmessage': "I am bold font from the context",
+                    "lukes_message": "Hello I'm the text that Luke is writing to prove that i understand where stuff comes from."}
 
     # Return a rendered response to send to the client.
     # We make use of the shortcut function to make our lives easier.
