@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/lumos.iml" filepath="$PROJECT_DIR$/.idea/lumos.iml" />
       <module fileurl="file://$USER_HOME$/pong/.idea/pong.iml" filepath="$USER_HOME$/pong/.idea/pong.iml" />
+      <module fileurl="file://$USER_HOME$/Projects/suduku_slover/.idea/suduku_slover.iml" filepath="$USER_HOME$/Projects/suduku_slover/.idea/suduku_slover.iml" />
+      <module fileurl="file://$USER_HOME$/twd/.idea/twd.iml" filepath="$USER_HOME$/twd/.idea/twd.iml" />
     </modules>
   </component>
 </project>
