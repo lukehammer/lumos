@@ -3,6 +3,7 @@ from django.db import models
 class Shows(models.Model):
     #address break down in different model
     #day of point of contact
+
     directions_from_parking_to_stage = models.CharField(max_length=200)
     parking = models.CharField(max_length=200)
     loading_unloading_parking = models.CharField(max_length=128)
