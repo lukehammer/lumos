@@ -12,11 +12,13 @@ class Shows(models.Model):
         return self.name
 
 class Tricks(models.Model):
-    shows = models.ForeignKey(Shows)
+    shows = models.ManyToManyField(Shows)
     audiences = models.CharField(max_length=128)
     props = models.CharField(max_length=128)
     patter = models.CharField(max_length=1000)
     cost_to_preform = models.DecimalField(max_digits= 5, decimal_places=2)
+    cost_to_buy_effect = models.DecimalField(max_digits= 5, decimal_places=2)
+
 
     def __unicode__(self):
         return self.title
