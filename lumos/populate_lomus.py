@@ -66,6 +66,8 @@ def populate():
 
 
     # Print out what we have added to the user.
+
+
     for c in Category.objects.all():
         for p in Page.objects.filter(category=c):
             print "- {0} - {1}".format(str(c), str(p))
