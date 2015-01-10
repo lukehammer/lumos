@@ -1,1 +1,26 @@
-python manage.py sql lumos
+BEGIN;
+CREATE TABLE "lumos_shows" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "directions_from_parking_to_stage" varchar(200) NOT NULL,
+    "parking" varchar(200) NOT NULL,
+    "loading_unloading_parking" varchar(128) NOT NULL
+)
+;
+CREATE TABLE "lumos_tricks_shows" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "tricks_id" integer NOT NULL,
+    "shows_id" integer NOT NULL REFERENCES "lumos_shows" ("id"),
+    UNIQUE ("tricks_id", "shows_id")
+)
+;
+CREATE TABLE "lumos_tricks" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "audiences" varchar(128) NOT NULL,
+    "props" varchar(128) NOT NULL,
+    "patter" varchar(1000) NOT NULL,
+    "cost_to_preform" decimal NOT NULL,
+    "cost_to_buy_effect" decimal NOT NULL
+)
+;
+
+COMMIT;
