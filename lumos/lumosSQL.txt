@@ -1,19 +1,19 @@
 BEGIN;
-CREATE TABLE "lumos_shows" (
+CREATE TABLE "lumos_show" (
     "id" integer NOT NULL PRIMARY KEY,
     "directions_from_parking_to_stage" varchar(200) NOT NULL,
     "parking" varchar(200) NOT NULL,
     "loading_unloading_parking" varchar(128) NOT NULL
 )
 ;
-CREATE TABLE "lumos_tricks_shows" (
+CREATE TABLE "lumos_trick_shows" (
     "id" integer NOT NULL PRIMARY KEY,
-    "tricks_id" integer NOT NULL,
-    "shows_id" integer NOT NULL REFERENCES "lumos_shows" ("id"),
-    UNIQUE ("tricks_id", "shows_id")
+    "trick_id" integer NOT NULL,
+    "show_id" integer NOT NULL REFERENCES "lumos_show" ("id"),
+    UNIQUE ("trick_id", "show_id")
 )
 ;
-CREATE TABLE "lumos_tricks" (
+CREATE TABLE "lumos_trick" (
     "id" integer NOT NULL PRIMARY KEY,
     "audiences" varchar(128) NOT NULL,
     "props" varchar(128) NOT NULL,
