@@ -9,10 +9,10 @@
     hello world! <strong> {{ boldmessage}}</strong><br />
     <a href="/lumos/about/">About</a><br />
     <h2>{{ lukes_message}}</h2>
-    {% if Shows %}
+    {% if persons %}
     <ul>
-        {%for show in shows%}
-        <li>{{show.name}}</li>
+        {%for person in persons%}
+        <li>{{person.first_name}} {{person.last_name}}</li>
 
 
         {% endfor %}
@@ -24,5 +24,8 @@
 
 
     {% endif %}
+</br>
+{{persons}}test
+
 </body>
 </html>

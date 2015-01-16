@@ -15,11 +15,19 @@ class Trick(models.Model):
 class Show(models.Model):
     #address break down in different model
     #day of point of contact
-    name = models.CharField(max_length=128)
-    parking_unloading_notes= models.CharField(max_length=1000)
+    show_name = models.CharField(max_length=128)
+    notes = models.TextField(blank = True)
     tricks = models.ManyToManyField(Trick)
     def __unicode__(self):
-        return self.name
+        return self.show_name
+
+
+class Person(models.Model):
+    first_name = models.CharField(max_length=35)
+    last_name = models.CharField(max_length=35)
+    phone_number = models.CharField(max_length=15)
+    def __unicode__(self):
+        return self.first_name
 
 
 

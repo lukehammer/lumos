@@ -1,26 +1,21 @@
-BEGIN;
-CREATE TABLE "lumos_show" (
-    "id" integer NOT NULL PRIMARY KEY,
-    "directions_from_parking_to_stage" varchar(200) NOT NULL,
-    "parking" varchar(200) NOT NULL,
-    "loading_unloading_parking" varchar(128) NOT NULL
-)
-;
-CREATE TABLE "lumos_trick_shows" (
-    "id" integer NOT NULL PRIMARY KEY,
-    "trick_id" integer NOT NULL,
-    "show_id" integer NOT NULL REFERENCES "lumos_show" ("id"),
-    UNIQUE ("trick_id", "show_id")
-)
-;
-CREATE TABLE "lumos_trick" (
-    "id" integer NOT NULL PRIMARY KEY,
-    "audiences" varchar(128) NOT NULL,
-    "props" varchar(128) NOT NULL,
-    "patter" varchar(1000) NOT NULL,
-    "cost_to_preform" decimal NOT NULL,
-    "cost_to_buy_effect" decimal NOT NULL
-)
-;
+Creating tables ...
+Creating table auth_permission
+Creating table auth_group_permissions
+Creating table auth_group
+Creating table auth_user_groups
+Creating table auth_user_user_permissions
+Creating table auth_user
+Creating table django_content_type
+Creating table django_session
+Creating table django_site
+Creating table django_admin_log
+Creating table lumos_trick
+Creating table lumos_show_tricks
+Creating table lumos_show
+Creating table lumos_person
 
-COMMIT;
+You just installed Django's auth system, which means you don't have any superusers defined.
+Would you like to create one now? (yes/no): Username (leave blank to use 'student'): Email address: Superuser created successfully.
+Installing custom SQL ...
+Installing indexes ...
+Installed 0 object(s) from 0 fixture(s)
