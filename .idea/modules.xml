@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/lumos.iml" filepath="$PROJECT_DIR$/.idea/lumos.iml" />
+      <module fileurl="file://$USER_HOME$/twd/.idea/twd.iml" filepath="$USER_HOME$/twd/.idea/twd.iml" />
     </modules>
   </component>
 </project>

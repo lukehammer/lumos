@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', views.index, name= 'index'),
     url(r'^monkeys$', views.monkeys, name= 'monkeys'),
+    url(r'^shows$',views.show,name='showform')
 
     # Examples:
     # url(r'^$', 'lumos.views.home', name='home'),
