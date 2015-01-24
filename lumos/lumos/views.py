@@ -29,10 +29,14 @@ def index(request):
 def monkeys(request):
     return render_to_response('lumos/about.html')
 
+def home(request):
+    return render_to_response('lumos/home.html')
+
 def show(request):
     #render('suck it')
     return HttpResponse('suck it trebek')
-
+def tricks(request):
+    return render_to_response('lumos/tricks.html')
 def ajax(request):
 
     if request.method == "POST":
