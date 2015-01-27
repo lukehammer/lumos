@@ -5,6 +5,8 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="twd" />
+    <orderEntry type="module" module-name="fall-2014-eve" />
+    <orderEntry type="module" module-name="suduku_slover" />
   </component>
 </module>
 

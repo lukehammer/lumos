@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$USER_HOME$/fall-2014-eve/.idea/fall-2014-eve.iml" filepath="$USER_HOME$/fall-2014-eve/.idea/fall-2014-eve.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/lumos.iml" filepath="$PROJECT_DIR$/.idea/lumos.iml" />
+      <module fileurl="file://$USER_HOME$/Projects/suduku_slover/.idea/suduku_slover.iml" filepath="$USER_HOME$/Projects/suduku_slover/.idea/suduku_slover.iml" />
       <module fileurl="file://$USER_HOME$/twd/.idea/twd.iml" filepath="$USER_HOME$/twd/.idea/twd.iml" />
     </modules>
   </component>
