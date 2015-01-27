@@ -1,6 +1,0 @@
-create forms for inputing tricks in Javascript
-
-create a drag and drop area for trick note/links 
-create a time function to make show lenghts based on the tricks licluded. 
-
-testing
