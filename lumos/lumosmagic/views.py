@@ -1,8 +1,48 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from json import dumps, loads
+from django.views.decorators.csrf import csrf_exempt
+from lumosmagic.models import Trick
+
+
+
+
+
+
+
+
 
 def index(request):
     context_dict = {'boldmessage': "I am bold fount "}
     return render(request,"lumosmagic/index.html", context_dict)
 
+def trick(request):
+    context_dict = {}
+    return render(request,"lumosmagic/tricks.html", context_dict)
+
 # Create your views here.
+
+#this is a example for people editing forms
+def dom(request):
+    if request.method == "POST":
+        print request.POST
+    return render(request, 'lumosmagic/dom.html')
+
+@csrf_exempt
+def ajax(request):
+
+    if request.method == "POST":
+        category = Trick()
+        category.name = request.POST["name"]
+        category.save()
+
+    category_list = list(Trick.objects.all())
+
+    test_list = []
+    for ii in category_list:
+        test_list.append({
+            "name":ii.name,
+            "length":ii.length,
+            })
+
+    return HttpResponse(dumps(test_list), content_type='application/json')

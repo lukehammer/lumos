@@ -8,5 +8,6 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^lumosmagic/', include("lumosmagic.urls")),
+    url(r'^$', include("lumosmagic.urls")),
     #url(r'^$',include(admin.site.urls))
 )
