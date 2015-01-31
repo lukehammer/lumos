@@ -43,7 +43,7 @@
                 var text = template.innerHTML;
                 for (var p in item) {
                     if (item.hasOwnProperty(p)) {
-                        text = text.replace("{phone." + p + "}", item[p]);
+                        text = text.replace("{trick." + p + "}", item[p]);
                     }
                 }
                 output.push(text)
@@ -86,12 +86,14 @@
             //title=spiderman&role=hero&color=red
             for(var i=0; i < elementList.length; i++){
                 var element = elementList[i];
-                formDataList.push(
-                        encodeURIComponent(element.name)
-                        + "=" +
-                        encodeURIComponent(element.value)
-                );
-                console.log(element.name);
+//                if (textbox.tagName == "trickName" && textbox.getAttribute("type" == "text")) {
+                    formDataList.push(
+                                    encodeURIComponent(element.name)
+                                    + "=" +
+                                    encodeURIComponent(element.value)
+                    );
+                    console.log(element.name);
+//                }
             }
             saveData(formDataList.join("&"));
             //CANCEL FORM SUBMISSION; must be returned in onsubmit below.
@@ -105,28 +107,30 @@
             display: none;
         }
         label {display:block;}
-        input {margin:10px;padding:10px; }
+        input {margin:10px;padding:10px;
+            display: inline-block;}
 
     </style>
 </head>
 <body>
-<form id="f1" action="/lumosmagic/ajax/" method="post" onsubmit=" return captureSubmit()">
-    <label>Trick name
-        <input name="trickName" value = "default">
-    </label>
-        <label>Trick length
-        <input name="trickLenght" value = "default">
-    </label>
-    <input type="submit" value="submit">
+<div id="f1" action="/lumosmagic/ajax/" method="post" onsubmit=" return captureSubmit()">
+    <label for="trickname">Trick name    </label>
+        <input name="trickName">
+    <label for="trickLength">Trick length</label>
+        <input name="trickLength">
 
-</form>
+    <button onclick=captureSubmit()>add trick</button>
+
+</div>
 <ul id="list">
 </ul>
 <ul class="template">
     <li id="template" class="template">
 
         <span>
-           Name: {phone.name}
+           Name: {trick.name}
+            <br>
+           Length: {trick.length}
         </span>
         <br>
         <br>

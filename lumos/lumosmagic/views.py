@@ -32,14 +32,15 @@ def dom(request):
 def ajax(request):
 
     if request.method == "POST":
-        category = Trick()
-        category.name = request.POST["name"]
-        category.save()
+        trick = Trick()
+        trick.name = request.POST["trickName"]
+        trick.length = request.POST["trickLength"]
+        trick.save()
 
-    category_list = list(Trick.objects.all())
+    trick_list = list(Trick.objects.all())
 
     test_list = []
-    for ii in category_list:
+    for ii in trick_list:
         test_list.append({
             "name":ii.name,
             "length":ii.length,
