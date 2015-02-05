@@ -28,6 +28,11 @@ def dom(request):
         print request.POST
     return render(request, 'lumosmagic/dom.html')
 
+def show_builder(request):
+    if request.method == "POST":
+        print request.POST
+    return render(request, 'lumosmagic/show_builder.html')
+
 @csrf_exempt
 def ajax(request):
 

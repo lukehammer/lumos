@@ -6,7 +6,8 @@ urlpatterns = patterns('',
     url(r'^$', views.index, name='index'),
     url(r'tricks/?', views.trick, name='trick'),
     url(r'dom/?', views.dom, name='dom'),
-    url(r'^ajax/$', views.ajax, name='ajax')
+    url(r'^ajax/$', views.ajax, name='ajax'),
+    url(r'^show_builder/?$', views.show_builder, name='show_builder')
 
     )
 
