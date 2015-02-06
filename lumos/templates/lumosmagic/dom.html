@@ -80,20 +80,22 @@
         }
         function captureSubmit(){
             //Get inputs inside form and iterate over them.
+            document.gete
             var elementList = document.getElementById("f1").children;
             formDataList = [];
             //Creating something like this:
             //title=spiderman&role=hero&color=red
+
             for(var i=0; i < elementList.length; i++){
                 var element = elementList[i];
-//                if (textbox.tagName == "trickName" && textbox.getAttribute("type" == "text")) {
+
                     formDataList.push(
                                     encodeURIComponent(element.name)
                                     + "=" +
                                     encodeURIComponent(element.value)
                     );
                     console.log(element.name);
-//                }
+
             }
             saveData(formDataList.join("&"));
             //CANCEL FORM SUBMISSION; must be returned in onsubmit below.
