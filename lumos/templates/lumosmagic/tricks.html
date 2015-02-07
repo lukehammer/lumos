@@ -82,7 +82,7 @@
             console.log(document.getElementById('trickLengthSeconds').value);
             var trickSeconds = document.getElementById('trickLengthSeconds').value;
             var trickMinutes = document.getElementById('trickLength').value;
-            var document.getElementById('trickLength').value = trickMinutes + trickSeconds / 60;
+            var document.getElementById('trickLength').value = parseFloat(trickMinutes) + parseFloat(trickSeconds / 60);
             document.getElementById('trickLengthSeconds').value = 0;
 
             //Get inputs inside form and iterate over them.
