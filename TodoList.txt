@@ -1,0 +1,4 @@
+create forms for inputing tricks in Javascript
+just testing git 
+create a drag and drop area for trick note/links 
+create a time function to make show lenghts based on the tricks licluded. 

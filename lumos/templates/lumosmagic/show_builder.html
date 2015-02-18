@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>show builder</title>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+
+    <style>
+        /*.draggable {*/
+        /*width: 150px;*/
+        /*height: 100px;*/
+        /*padding: 0.5em;*/
+        /*}*/
+        .trick {
+            width: 100px;
+            display: inline-block;
+            border: solid 2px;
+            margin: 15px;
+            padding: 10px;
+            z-index: 30;
+        }
+
+        #trick_list {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 50%;
+
+        }
+
+        .showlist {
+            position: absolute;
+            top: 100px;
+            right: 0;
+            width: 50%;
+            background-color: orange;
+            min-height: 500px;
+        }
+
+        body {
+            position: relative;
+        }
+
+
+    </style>
+
+    <script>
+
+        $(function () {
+
+            $(".trick").draggable();
+
+        });
+
+    </script>
+
+    <!--this is the drag able code luke is playing with with the attempt to delete the dragable item after it is released.-->
+    <script>
+
+  $(function() {
+
+    var $start_counter = $( "#event-start" ),
+
+      $drag_counter = $( "#event-drag" ),
+
+      $stop_counter = $( "#event-stop" ),
+
+      counts = [ 0, 0, 0 ];
+
+
+
+    $( "#draggable" ).draggable({
+
+      start: function() {
+
+        counts[ 0 ]++;
+
+        updateCounterStatus( $start_counter, counts[ 0 ] );
+
+      },
+
+      drag: function() {
+
+        counts[ 1 ]++;
+
+        updateCounterStatus( $drag_counter, counts[ 1 ] );
+
+      },
+
+      stop: function() {
+
+        counts[ 2 ]++;
+
+        updateCounterStatus( $stop_counter, counts[ 2 ] );
+
+      }
+
+    });
+
+
+
+    function updateCounterStatus( $event_counter, new_count ) {
+
+      // first update the status visually...
+
+      if ( !$event_counter.hasClass( "ui-state-hover" ) ) {
+
+        $event_counter.addClass( "ui-state-hover" )
+
+          .siblings().removeClass( "ui-state-hover" );
+
+      }
+
+      // ...then update the numbers
+
+      $( "span.count", $event_counter ).text( new_count );
+
+    }
+
+  });
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+<div id="trick_list">
+    <h1>Show Builder</h1>
+
+
+    {% if tricks %}
+    <ul>
+        {% for trick in tricks %}
+        <div class="trick dragable"> {{ trick.name }}</div>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <strong>There are no tricks.</strong>
+    {% endif %}
+</div>
+<div class="showlist">
+
+</div>
+</body>
+</html>
