@@ -39,6 +39,10 @@
             var template = document.getElementById("template");
             var output = [];
             data.forEach(function (item) {
+<<<<<<< HEAD
+=======
+                console.log(item);
+>>>>>>> 28be70440ac8e95134e156a58c485c17c13e226e
                 var text = template.innerHTML;
                 for (var p in item) {
                     if (item.hasOwnProperty(p)) {
@@ -81,11 +85,16 @@
             console.log(document.getElementById('trickLengthSeconds').value);
             var trickSeconds = document.getElementById('trickLengthSeconds').value;
             var trickMinutes = document.getElementById('trickLength').value;
+<<<<<<< HEAD
             var timeInMinutes = parseFloat(trickMinutes) + parseFloat(trickSeconds / 60);
            //round to hundrenth of minitute
             document.getElementById('trickLength').value = Math.round(100* timeInMinutes)/100;
 
             document.getElementById('trickLengthSeconds').value = '';
+=======
+            var document.getElementById('trickLength').value = parseFloat(trickMinutes) + parseFloat(trickSeconds / 60);
+            document.getElementById('trickLengthSeconds').value = 0;
+>>>>>>> 28be70440ac8e95134e156a58c485c17c13e226e
 
             //Get inputs inside form and iterate over them.
             var elementList = document.getElementById("f1").children;

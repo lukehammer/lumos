@@ -2,6 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+<<<<<<< HEAD
     <title>show builder</title>
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 
@@ -141,10 +142,29 @@
 
 
 
+=======
+    <title>show builder
+        <script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
+>>>>>>> 28be70440ac8e95134e156a58c485c17c13e226e
 
 
 </head>
 <body>
+<<<<<<< HEAD
 <div id="trick_list">
     <h1>Show Builder</h1>
 
@@ -162,5 +182,11 @@
 <div class="showlist">
 
 </div>
+=======
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+<img id="drag1" src="static\magichar.png" draggable="true"
+ondragstart="drag(event)">
+>>>>>>> 28be70440ac8e95134e156a58c485c17c13e226e
 </body>
 </html>
