@@ -4,25 +4,22 @@ from json import dumps, loads
 from django.views.decorators.csrf import csrf_exempt
 from lumosmagic.models import Trick
 
-<<<<<<< HEAD
+
 def show_builder(request):
     trick_list = Trick.objects.order_by('name')
     context_dict = {"tricks": trick_list}
     return render(request, 'lumosmagic/show_builder.html', context_dict)
-=======
->>>>>>> 28be70440ac8e95134e156a58c485c17c13e226e
 
 
 
 
 
-<<<<<<< HEAD
+
+
 def navagation(request):
     context_dict = {}
     return render(request,"lumosmagic/navagation.html", context_dict)
-=======
 
->>>>>>> 28be70440ac8e95134e156a58c485c17c13e226e
 
 
 def index(request):
@@ -41,13 +38,8 @@ def dom(request):
         print request.POST
     return render(request, 'lumosmagic/dom.html')
 
-<<<<<<< HEAD
-=======
-def show_builder(request):
-    if request.method == "POST":
-        print request.POST
-    return render(request, 'lumosmagic/show_builder.html')
->>>>>>> 28be70440ac8e95134e156a58c485c17c13e226e
+
+
 
 @csrf_exempt
 def ajax(request):
@@ -58,10 +50,6 @@ def ajax(request):
         trick.length = request.POST["trickLength"]
         trick.save()
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 28be70440ac8e95134e156a58c485c17c13e226e
     trick_list = list(Trick.objects.all())
 
     test_list = []
