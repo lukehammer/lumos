@@ -11,11 +11,6 @@ def show_builder(request):
     return render(request, 'lumosmagic/show_builder.html', context_dict)
 
 
-
-
-
-
-
 def navagation(request):
     context_dict = {}
     return render(request,"lumosmagic/navagation.html", context_dict)

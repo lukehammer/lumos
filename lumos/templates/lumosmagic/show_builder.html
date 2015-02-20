@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-<<<<<<< HEAD
+
     <title>show builder</title>
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 
@@ -51,7 +51,6 @@
     <script>
 
         $(function () {
-
             $(".trick").draggable();
 
         });
@@ -61,110 +60,89 @@
     <!--this is the drag able code luke is playing with with the attempt to delete the dragable item after it is released.-->
     <script>
 
-  $(function() {
+        $(function () {
 
-    var $start_counter = $( "#event-start" ),
+            var $start_counter = $("#event-start"),
 
-      $drag_counter = $( "#event-drag" ),
+                    $drag_counter = $("#event-drag"),
 
-      $stop_counter = $( "#event-stop" ),
+                    $stop_counter = $("#event-stop"),
 
-      counts = [ 0, 0, 0 ];
-
-
-
-    $( "#draggable" ).draggable({
-
-      start: function() {
-
-        counts[ 0 ]++;
-
-        updateCounterStatus( $start_counter, counts[ 0 ] );
-
-      },
-
-      drag: function() {
-
-        counts[ 1 ]++;
-
-        updateCounterStatus( $drag_counter, counts[ 1 ] );
-
-      },
-
-      stop: function() {
-
-        counts[ 2 ]++;
-
-        updateCounterStatus( $stop_counter, counts[ 2 ] );
-
-      }
-
-    });
+                    counts = [ 0, 0, 0 ];
 
 
+            $("#draggable").draggable({
 
-    function updateCounterStatus( $event_counter, new_count ) {
+                start: function () {
 
-      // first update the status visually...
+                    counts[ 0 ]++;
 
-      if ( !$event_counter.hasClass( "ui-state-hover" ) ) {
+                    updateCounterStatus($start_counter, counts[ 0 ]);
 
-        $event_counter.addClass( "ui-state-hover" )
+                },
 
-          .siblings().removeClass( "ui-state-hover" );
+                drag: function () {
 
-      }
+                    counts[ 1 ]++;
 
-      // ...then update the numbers
+                    updateCounterStatus($drag_counter, counts[ 1 ]);
 
-      $( "span.count", $event_counter ).text( new_count );
+                },
 
-    }
+                stop: function () {
 
-  });
+                    counts[ 2 ]++;
 
-  </script>
+                    updateCounterStatus($stop_counter, counts[ 2 ]);
 
+                }
 
-
-
-
-
-
+            });
 
 
+            function updateCounterStatus($event_counter, new_count) {
+
+                // first update the status visually...
+
+                if (!$event_counter.hasClass("ui-state-hover")) {
+
+                    $event_counter.addClass("ui-state-hover")
+
+                            .siblings().removeClass("ui-state-hover");
+
+                }
+
+                // ...then update the numbers
+
+                $("span.count", $event_counter).text(new_count);
+
+            }
+
+        });
+
+    </script>
 
 
-
-
-
-
-
-
-
-=======
-    <title>show builder
         <script>
-function allowDrop(ev) {
-    ev.preventDefault();
-}
+            function allowDrop(ev) {
+                ev.preventDefault();
+            }
 
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-}
+            function drag(ev) {
+                ev.dataTransfer.setData("text", ev.target.id);
+            }
 
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-}
-</script>
->>>>>>> 28be70440ac8e95134e156a58c485c17c13e226e
+            function drop(ev) {
+                ev.preventDefault();
+                var data = ev.dataTransfer.getData("text");
+                ev.target.appendChild(document.getElementById(data));
+            }
+        </script>
 
 
 </head>
 <body>
-<<<<<<< HEAD
+This is a test
 <div id="trick_list">
     <h1>Show Builder</h1>
 
@@ -182,11 +160,11 @@ function drop(ev) {
 <div class="showlist">
 
 </div>
-=======
+
 <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
 <img id="drag1" src="static\magichar.png" draggable="true"
-ondragstart="drag(event)">
->>>>>>> 28be70440ac8e95134e156a58c485c17c13e226e
+     ondragstart="drag(event)">
+
 </body>
 </html>
