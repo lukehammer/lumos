@@ -3,11 +3,11 @@ from django.contrib import admin
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'lumos.views.home', name='home'),
+    # url(r'^$', 'lumos_site.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^lumosmagic/', include("lumosmagic.urls")),
-    url(r'^$', include("lumosmagic.urls")),
+    url(r'^lumos_app/', include("lumos_app.urls")),
+    url(r'^$', include("lumos_app.urls")),
     #url(r'^$',include(admin.site.urls))
 )

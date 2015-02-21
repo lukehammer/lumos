@@ -35,7 +35,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='show',
             name='trick',
-            field=models.ManyToManyField(to='lumosmagic.Trick'),
+            field=models.ManyToManyField(to='lumos_app.Trick'),
             preserve_default=True,
         ),
     ]

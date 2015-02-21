@@ -2,28 +2,28 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from json import dumps, loads
 from django.views.decorators.csrf import csrf_exempt
-from lumosmagic.models import Trick
+from lumos_app.models import Trick
 
 
 def show_builder(request):
     trick_list = Trick.objects.order_by('name')
     context_dict = {"tricks": trick_list}
-    return render(request, 'lumosmagic/show_builder.html', context_dict)
+    return render(request, 'lumos_app/show_builder.html', context_dict)
 
 
 def navagation(request):
     context_dict = {}
-    return render(request,"lumosmagic/navagation.html", context_dict)
+    return render(request,"lumos_app/navagation.html", context_dict)
 
 
 
 def index(request):
     context_dict = {'boldmessage': "I am bold fount "}
-    return render(request,"lumosmagic/index.html", context_dict)
+    return render(request,"lumos_app/index.html", context_dict)
 
 def trick(request):
     context_dict = {}
-    return render(request,"lumosmagic/tricks.html", context_dict)
+    return render(request,"lumos_app/tricks.html", context_dict)
 
 # Create your views here.
 
@@ -31,7 +31,7 @@ def trick(request):
 def dom(request):
     if request.method == "POST":
         print request.POST
-    return render(request, 'lumosmagic/dom.html')
+    return render(request, 'lumos_app/dom.html')
 
 
 

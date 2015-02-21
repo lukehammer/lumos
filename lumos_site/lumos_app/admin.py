@@ -1,5 +1,5 @@
 from django.contrib import admin
-from lumosmagic.models import Show, Trick
+from lumos_app.models import Show, Trick
 
 admin.site.register(Show)
 admin.site.register(Trick)

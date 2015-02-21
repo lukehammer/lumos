@@ -48,9 +48,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'lumos.urls'
+ROOT_URLCONF = 'lumos_site.urls'
 
-WSGI_APPLICATION = 'lumos.wsgi.application'
+WSGI_APPLICATION = 'lumos_site.wsgi.application'
 
 
 # Database

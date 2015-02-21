@@ -7,7 +7,7 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('lumosmagic', '0001_initial'),
+        ('lumos_app', '0001_initial'),
     ]
 
     operations = [

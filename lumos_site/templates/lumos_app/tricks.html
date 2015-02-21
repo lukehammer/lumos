@@ -39,10 +39,7 @@
             var template = document.getElementById("template");
             var output = [];
             data.forEach(function (item) {
-<<<<<<< HEAD
-=======
                 console.log(item);
->>>>>>> 28be70440ac8e95134e156a58c485c17c13e226e
                 var text = template.innerHTML;
                 for (var p in item) {
                     if (item.hasOwnProperty(p)) {
@@ -68,7 +65,7 @@
         function fetch() {
             request.onload = undefined;
             request.onreadystatechange = onRequestChange;
-            request.open("GET", "/lumosmagic/ajax/", true);
+            request.open("GET", "/lumos_app/ajax/", true);
             request.send();
         }
         function load() {
@@ -76,7 +73,7 @@
         }
         window.addEventListener("load", load);
         function saveData(formData){
-            request.open("POST","/lumosmagic/ajax/",true);
+            request.open("POST","/lumos_app/ajax/",true);
             request.onload = fetch;
             request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
             request.send(formData);
@@ -85,16 +82,12 @@
             console.log(document.getElementById('trickLengthSeconds').value);
             var trickSeconds = document.getElementById('trickLengthSeconds').value;
             var trickMinutes = document.getElementById('trickLength').value;
-<<<<<<< HEAD
             var timeInMinutes = parseFloat(trickMinutes) + parseFloat(trickSeconds / 60);
            //round to hundrenth of minitute
             document.getElementById('trickLength').value = Math.round(100* timeInMinutes)/100;
-
             document.getElementById('trickLengthSeconds').value = '';
-=======
-            var document.getElementById('trickLength').value = parseFloat(trickMinutes) + parseFloat(trickSeconds / 60);
+            document.getElementById('trickLength').value = parseFloat(trickMinutes) + parseFloat(trickSeconds / 60);
             document.getElementById('trickLengthSeconds').value = 0;
->>>>>>> 28be70440ac8e95134e156a58c485c17c13e226e
 
             //Get inputs inside form and iterate over them.
             var elementList = document.getElementById("f1").children;
@@ -128,7 +121,7 @@
     </style>
 </head>
 <body>
-<div id="f1" action="/lumosmagic/ajax/" method="post" onsubmit=" return captureSubmit()">
+<div id="f1" action="/lumos_app/ajax/" method="post" onsubmit=" return captureSubmit()">
     <label for="trickname">Trick name    </label>
         <input name="trickName"id="trickName">>
     <label for="trickLength">Trick length in Minutes</label>
